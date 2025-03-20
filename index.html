@@ -16,6 +16,8 @@
         h1 {
             font-size: 2.5rem;
             color: #00bcd4;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         .container {
             width: 80%;
@@ -29,6 +31,7 @@
             overflow: hidden;
             box-shadow: 0px 4px 10px rgba(0, 188, 212, 0.5);
             margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
         }
         th, td {
             border: 1px solid #333;
@@ -46,6 +49,8 @@
         tr:hover {
             background-color: #00bcd4;
             color: black;
+            transform: scale(1.02);
+            transition: all 0.3s ease-in-out;
         }
         .criteria {
             margin-top: 30px;
@@ -54,9 +59,11 @@
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 188, 212, 0.5);
             text-align: left;
+            animation: slideIn 1s ease-in-out;
         }
         .criteria h2 {
             color: #00bcd4;
+            text-transform: uppercase;
         }
         .criteria ul {
             list-style: none;
@@ -64,6 +71,14 @@
         }
         .criteria ul li {
             padding: 5px 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
     </style>
 </head>
@@ -100,11 +115,16 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const rankings = [
-                { name: "Student A", attendance: 90, participation: 80, project: 100 },
-                { name: "Student B", attendance: 85, participation: 75, project: 90 },
-                { name: "Student C", attendance: 80, participation: 70, project: 50 },
-                { name: "Student D", attendance: 75, participation: 60, project: 70 },
-                { name: "Student E", attendance: 70, participation: 50, project: 30 }
+                { name: "Student A", attendance: 95, participation: 85, project: 100 },
+                { name: "Student B", attendance: 90, participation: 80, project: 95 },
+                { name: "Student C", attendance: 88, participation: 75, project: 90 },
+                { name: "Student D", attendance: 85, participation: 70, project: 85 },
+                { name: "Student E", attendance: 83, participation: 68, project: 80 },
+                { name: "Student F", attendance: 80, participation: 65, project: 75 },
+                { name: "Student G", attendance: 78, participation: 63, project: 70 },
+                { name: "Student H", attendance: 76, participation: 60, project: 65 },
+                { name: "Student I", attendance: 74, participation: 58, project: 60 },
+                { name: "Student J", attendance: 72, participation: 55, project: 55 }
             ];
 
             rankings.forEach(student => {
