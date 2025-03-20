@@ -17,14 +17,18 @@
             font-size: 2.5rem;
             color: #00bcd4;
         }
-        table {
+        .container {
             width: 80%;
             margin: auto;
+        }
+        table {
+            width: 100%;
             border-collapse: collapse;
             background: #1e1e1e;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0px 4px 10px rgba(0, 188, 212, 0.5);
+            margin-top: 20px;
         }
         th, td {
             border: 1px solid #333;
@@ -43,25 +47,55 @@
             background-color: #00bcd4;
             color: black;
         }
+        .criteria {
+            margin-top: 30px;
+            padding: 15px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 188, 212, 0.5);
+            text-align: left;
+        }
+        .criteria h2 {
+            color: #00bcd4;
+        }
+        .criteria ul {
+            list-style: none;
+            padding: 0;
+        }
+        .criteria ul li {
+            padding: 5px 0;
+        }
     </style>
 </head>
 <body>
     <h1>GDG AIML Leaderboard</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Name</th>
-                <th>Attendance (%)</th>
-                <th>Participation & Alertness (%)</th>
-                <th>Project Submission (Out of 100)</th>
-                <th>Total Score (Out of 100)</th>
-            </tr>
-        </thead>
-        <tbody id="ranking-table">
-            <!-- Data will be inserted dynamically -->
-        </tbody>
-    </table>
+    
+    <div class="container">
+        <div class="criteria">
+            <h2>Evaluation Criteria</h2>
+            <ul>
+                <li><strong>Attendance:</strong> 40% weightage</li>
+                <li><strong>Participation & Alertness:</strong> 30% weightage</li>
+                <li><strong>Project Submission:</strong> 30% weightage</li>
+            </ul>
+        </div>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Attendance (%)</th>
+                    <th>Participation & Alertness (%)</th>
+                    <th>Project Submission (Out of 100)</th>
+                    <th>Total Score (Out of 100)</th>
+                </tr>
+            </thead>
+            <tbody id="ranking-table">
+                <!-- Data will be inserted dynamically -->
+            </tbody>
+        </table>
+    </div>
     
     <script>
         document.addEventListener("DOMContentLoaded", function () {
