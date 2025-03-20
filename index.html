@@ -52,7 +52,7 @@
             transform: scale(1.02);
             transition: all 0.3s ease-in-out;
         }
-        .criteria {
+        .criteria, .rewards {
             margin-top: 30px;
             padding: 15px;
             background: #1e1e1e;
@@ -61,16 +61,28 @@
             text-align: left;
             animation: slideIn 1s ease-in-out;
         }
-        .criteria h2 {
+        .criteria h2, .rewards h2 {
             color: #00bcd4;
             text-transform: uppercase;
         }
-        .criteria ul {
+        .criteria ul, .rewards ul {
             list-style: none;
             padding: 0;
         }
-        .criteria ul li {
+        .criteria ul li, .rewards ul li {
             padding: 5px 0;
+        }
+        .swag-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .swag-images img {
+            width: 100px;
+            height: auto;
+            filter: blur(5px);
+            transition: filter 0.3s ease-in-out;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -110,6 +122,19 @@
                 <!-- Data will be inserted dynamically -->
             </tbody>
         </table>
+    
+        <div class="rewards">
+            <h2>Rewards & Recognition</h2>
+            <ul>
+                <li>🎖 Certificates will be given to the top 10 participants.</li>
+                <li>🎁 Swags will be awarded to top participants.</li>
+            </ul>
+            <div class="swag-images">
+                <img src="mug.png" alt="Swag Item">
+                <img src="tshirt.png" alt="Swag Item">
+                <img src="bag.png" alt="Swag Item">
+            </div>
+        </div>
     </div>
     
     <script>
