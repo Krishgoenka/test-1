@@ -13,10 +13,6 @@
             text-align: center;
             margin: 20px;
         }
-        .logo {
-            width: 150px;
-            margin-bottom: 20px;
-        }
         h1 {
             font-size: 2.5rem;
             color: #00bcd4;
@@ -27,6 +23,20 @@
             width: 80%;
             margin: auto;
         }
+        .criteria {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .criteria-card {
+            background: #292929;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 188, 212, 0.5);
+            width: 200px;
+            text-align: center;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -35,7 +45,6 @@
             overflow: hidden;
             box-shadow: 0px 4px 10px rgba(0, 188, 212, 0.5);
             margin-top: 20px;
-            animation: fadeIn 1s ease-in-out;
         }
         th, td {
             border: 1px solid #333;
@@ -56,31 +65,89 @@
             transform: scale(1.02);
             transition: all 0.3s ease-in-out;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .swag-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .swag-card {
+            background: #292929;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 188, 212, 0.5);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .swag-card:hover {
+            transform: scale(1.05);
+        }
+        .swag-card img {
+            width: 100%;
+            height: auto;
+            filter: blur(2px);
+        }
+        .swag-card:hover img {
+            filter: blur(0px);
         }
     </style>
 </head>
 <body>
-    <img src="gdg-logo.png" alt="GDG Logo" class="logo">
     <h1>GDG AIML Leaderboard</h1>
     
     <div class="container">
+        <div class="criteria">
+            <div class="criteria-card">
+                <h3>Attendance</h3>
+                <p>10 points</p>
+            </div>
+            <div class="criteria-card">
+                <h3>Participation</h3>
+                <p>10 points</p>
+            </div>
+            <div class="criteria-card">
+                <h3>Projects</h3>
+                <p>10 marks each for 10 projects</p>
+            </div>
+            <div class="criteria-card">
+                <h3>Total</h3>
+                <p>Out of 100</p>
+            </div>
+        </div>
+    
         <table>
             <thead>
                 <tr>
                     <th>Rank</th>
                     <th>Name</th>
-                    <th>Participation (Out of 10)</th>
-                    <th>Projects Score (Out of 100)</th>
-                    <th>Total Score (Out of 110)</th>
+                    <th>Attendance</th>
+                    <th>Participation</th>
+                    <th>Projects Score</th>
+                    <th>Total Score</th>
                 </tr>
             </thead>
-            <tbody id="ranking-table">
-                <!-- Data will be inserted dynamically -->
+            <tbody>
+                <tr><td>1</td><td>Alice</td><td>10</td><td>9</td><td>85</td><td>95</td></tr>
+                <tr><td>2</td><td>Bob</td><td>9</td><td>8</td><td>88</td><td>94</td></tr>
+                <tr><td>3</td><td>Charlie</td><td>10</td><td>10</td><td>80</td><td>93</td></tr>
             </tbody>
         </table>
+        
+        <div class="swag-container">
+            <div class="swag-card">
+                <img src="https://d3pyarv4eotqu4.cloudfront.net/printoonp/images/product/Caffe_tazza_mug_black.png" alt="Mug">
+                <p>Exclusive GDG Mug</p>
+            </div>
+            <div class="swag-card">
+                <img src="https://www.swagshirts99.com/wp-content/uploads/2021/03/Google-Cloud-Black-T-Shirt.jpg" alt="T-Shirt">
+                <p>Google Cloud T-Shirt</p>
+            </div>
+            <div class="swag-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_qn2cnVfSdDMuAH2f8qee7aeGNeGLrST9ig&s" alt="Bag">
+                <p>GDG Branded Bag</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
